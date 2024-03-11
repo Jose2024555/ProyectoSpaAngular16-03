@@ -1,0 +1,41 @@
+<div class="submit-form container" >
+    <div *ngIf="!submitted">
+      <h3 class="text-center mt-4 mb-4">Listado de Clientes</h3>
+  
+      <div class="col-2">
+        <a class="btn btn-warning" routerLink="/clientepost" >Nuevo Cliente</a>
+      </div>
+  </div>
+      <div class="col-md-12 p-2">
+        <table class="table">
+            
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nro.</th>
+          <th>Nombres</th>
+          <th>Apellidos</th>
+          <th>Correo Electrónico</th>
+          <th>Teléfono</th>
+          <th >Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listcliente">
+              <td>{{item.clienteId}}</td>
+              <td>{{item.clienteNombre}}</td>
+              <td>{{item.clienteApellidos}}</td>
+              <td>{{item.nroDocumento}}</td>
+              <td>{{item.telefono}}</td>
+              <td>{{item.correoElectronico}}</td>
+              <td>
+                <button type="button" class="btn btn-warning" routerLink="/clienteput" ata-bs-toggle="modal" data-bs>Editar
+                </button>
+                &nbsp;
+                <button type="button" class="btn btn-danger" (click)="delete(item)" >Eliminar</button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

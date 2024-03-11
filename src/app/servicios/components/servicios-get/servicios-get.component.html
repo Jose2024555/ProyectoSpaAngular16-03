@@ -1,0 +1,49 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/html/estilos/servicio_reg_act.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Crear Servicio</title>
+</head>
+
+<div class="submit-form container" >
+  <div *ngIf="!submitted">
+    <h3 class="text-center mt-4 mb-4"> Listado de Servicios</h3>
+
+    <div class="col-2">
+      <a class="btn btn-warning" routerLink="/serviciospost" >Nuevo Servicio</a>
+    </div>
+</div>
+    <div class="col-md-12 p-2">
+      <table class="table">
+
+      <thead >
+            <tr class="table-">
+                <th >Id</th>
+                <th >Nombre de Servicio</th>
+                <th >Descripcion</th>
+                <th >Duracion</th>
+                <th >Precio</th>
+                <th >Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of listservicios">
+              <td>{{item.servicioId}}</td>
+              <td>{{item.nombreServicio}}</td>
+              <td>{{item.descripcion}}</td>
+              <td>{{item.duracion}}</td>
+              <td>{{item.precio}}</td>
+              <td>
+                  <button type="button" class="btn btn-warning" routerLink="/serviciosput" ata-bs-toggle="modal" data-bs>Editar
+                  </button>
+                  &nbsp;
+                  <button type="button" class="btn btn-danger" (click)="delete(item)" >Eliminar</button>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

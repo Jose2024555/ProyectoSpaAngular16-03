@@ -1,0 +1,41 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/html/estilos/servicio_reg_act.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>Crear Servicio</title>
+</head>
+
+<div class="container" style=" min-height: 620px;">
+  <form [formGroup]="postserform" (ngSubmit)="createServicios()">
+      <div class="row align-items-start">
+          <div class="col"></div>
+
+          <div class="container contenidocuerpo">
+
+              <h2>Registrar Servicio</h2>
+
+              <label for="documento">Nombre del Servicio:</label>
+              <input type="text" class="form-control" formControlName="nombreServicio" required/>
+
+              <label for="documento">Descripcion:</label>
+              <input type="text" class="form-control" formControlName="descripcion" required/>
+
+              <label for="hora" class="mt-2">Duración:</label>
+              <input type="text" class="form-control" formControlName="duracion" required/>
+
+              <label for="hora" class="mt-2">Precio:</label>
+              <input type="number" class="form-control" formControlName="precio" required/>
+              <br>
+              <button type="submit">Registrar Servicio</button>
+              <a routerLink="/serviciosget" class="btn btn-outline-warning">Ver Listado</a>
+
+
+            </div>
+          <div class="col"></div>
+      </div>
+
+  </form>
+</div>

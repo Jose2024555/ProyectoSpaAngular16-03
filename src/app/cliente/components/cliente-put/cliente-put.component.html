@@ -1,0 +1,25 @@
+<div class="contenidocuerpo">
+    <h2>Actualizar Información del Cliente</h2>
+    
+    <form [formGroup]="putplanform" (ngSubmit)="updateCliente()">
+        <label for="documento">Número de Documento:</label>
+        <input type="text" class="form-control" formControlName="nroDocumento" required>
+        <br>
+        <label for="nombre">Nombre(s):</label>
+        <input type="text" iclass="form-control" formControlName="clienteNombre" required>
+        <br>
+        <label for="apellido">Apellido(s):</label>
+        <input type="text" class="form-control" formControlName="clienteApellidos" required>
+        <br>
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" class="form-control" formControlName="correoElectronico" required>
+        <br>
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" class="form-control" formControlName="telefono" required>
+        <br>
+        <br>
+      <button class="btnrosa" type="submit">Actualizar</button>
+      <a routerLink="/clienteget" class="btn btn-outline-warning">Ver Listado</a>
+    </form>
+
+  </div>
